@@ -1,0 +1,6 @@
+{
+  "name": "Markdown Viewer & Exporter",
+  "description": "Modern responsive Markdown viewer with real-time preview, multiple themes, LaTeX/math support, and high-quality image export.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

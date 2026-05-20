@@ -1,0 +1,76 @@
+@import "tailwindcss";
+@import "katex/dist/katex.min.css";
+@import "highlight.js/styles/github.css";
+@import url('https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@400;700&display=swap');
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-casual: "Noto Sans SC", system-ui, sans-serif;
+  --font-handwritten: "Ma Shan Zheng", cursive;
+  --font-formal: "Noto Serif SC", serif;
+}
+
+@layer base {
+  body {
+    @apply antialiased transition-colors duration-200;
+  }
+}
+
+/* Markdown overrides base */
+.markdown-body h1, .markdown-body h2, .markdown-body h3, .markdown-body h4 {
+  @apply font-bold mt-6 mb-4 leading-snug;
+}
+.markdown-body h1 { @apply text-3xl border-b pb-2; }
+.markdown-body h2 { @apply text-2xl border-b pb-2; }
+.markdown-body h3 { @apply text-xl; }
+.markdown-body p { @apply mb-4 leading-relaxed; }
+.markdown-body ul { @apply list-disc pl-6 mb-4 space-y-1; }
+.markdown-body ol { @apply list-decimal pl-6 mb-4 space-y-1; }
+.markdown-body pre { @apply p-4 rounded-md overflow-x-auto mb-4 text-sm font-mono leading-normal shadow-xs; }
+.markdown-body code { @apply px-1.5 py-0.5 rounded text-[0.9em] font-mono; }
+.markdown-body pre code { @apply p-0 text-[0.9em] font-mono bg-transparent shadow-none; }
+.markdown-body table { @apply w-full mb-4 border-collapse; }
+.markdown-body th, .markdown-body td { @apply border px-4 py-2 text-left; }
+.markdown-body hr { @apply my-8 border-t-2; }
+.markdown-body blockquote { @apply border-l-4 pl-4 py-1 mb-4 italic opacity-80; }
+
+/* Font classes */
+.font-casual { @apply font-casual; }
+.font-handwritten { @apply font-handwritten text-[1.2rem]; }
+.font-handwritten h1 { @apply text-4xl; }
+.font-handwritten h2 { @apply text-3xl; }
+.font-formal { @apply font-formal text-[1.05rem] leading-loose; }
+
+/* Color Mode: Light */
+.color-light {
+  @apply bg-white text-slate-900 border-slate-200;
+}
+.color-light h1, .color-light h2 { @apply border-slate-100; }
+.color-light pre { @apply bg-slate-50 border border-slate-100; }
+.color-light code { @apply bg-slate-100 text-pink-600; }
+.color-light pre code { @apply bg-transparent text-slate-800; }
+.color-light blockquote { @apply border-slate-300 text-slate-600; }
+.color-light th, .color-light td { @apply border-slate-200; }
+.color-light hr { @apply border-slate-100; }
+
+/* Color Mode: Dark */
+.color-dark {
+  @apply bg-[#0d1117] text-slate-200 border-[#30363d];
+}
+.color-dark h1, .color-dark h2 { @apply border-[#21262d]; }
+.color-dark pre { @apply bg-[#161b22] border border-[#30363d]; }
+.color-dark code { @apply bg-[#1f2428] text-pink-400; }
+.color-dark pre code { @apply bg-transparent text-slate-200; }
+.color-dark blockquote { @apply border-[#3b434b] text-slate-400; }
+.color-dark th, .color-dark td { @apply border-[#30363d]; }
+.color-dark hr { @apply border-[#21262d]; }
+
+/* Hide scrollbar for export */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
