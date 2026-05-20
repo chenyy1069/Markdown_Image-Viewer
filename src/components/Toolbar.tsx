@@ -23,11 +23,12 @@ export const Toolbar: React.FC<ToolbarProps> = ({
 
   return (
     <header className="grid grid-cols-1 md:grid-cols-12 gap-4 md:h-16 shrink-0">
-      <div className="md:col-span-3 flex items-center px-2 py-3 md:py-0 relative overflow-hidden">
-        <span className="font-extrabold tracking-tight text-xl sm:text-2xl z-10 truncate leading-none bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">Markdown Viewer</span>
+      <div className="md:col-span-4 flex items-center px-2 py-3 md:py-0 relative overflow-hidden shrink-0">
+        <span className="font-extrabold tracking-tight text-lg sm:text-xl z-10 truncate leading-none bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent py-1">Markdown Viewer by ChenYY</span>
+        <span className="text-base sm:text-lg ml-1 leading-none shrink-0">🌀</span>
       </div>
       
-      <div className="md:col-span-6 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-2xl flex items-center justify-between px-4 sm:px-6 py-3 md:py-0 shadow-sm overflow-x-auto transition-colors">
+      <div className="md:col-span-5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-2xl flex items-center justify-between px-4 sm:px-6 py-3 md:py-0 shadow-sm overflow-x-auto transition-colors">
         <div className="flex items-center gap-4 whitespace-nowrap">
           <div className="flex bg-slate-100 dark:bg-slate-700 p-1 rounded-lg shrink-0">
             <button 
