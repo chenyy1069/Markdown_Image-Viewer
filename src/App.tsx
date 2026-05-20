@@ -56,6 +56,11 @@ export default function App() {
     if (!previewRef.current) return;
     setIsExporting(true);
     
+    if (window.innerWidth < 1024 && !showMobilePreview) {
+      setShowMobilePreview(true);
+      await new Promise(resolve => setTimeout(resolve, 400));
+    }
+    
     try {
       const element = previewRef.current;
       
@@ -93,7 +98,7 @@ export default function App() {
     } finally {
       setIsExporting(false);
     }
-  }, [previewColor]);
+  }, [previewColor, showMobilePreview]);
 
   const onDrop = (e: React.DragEvent<HTMLDivElement>) => {
     e.preventDefault();
